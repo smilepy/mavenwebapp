@@ -1,0 +1,85 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> 统一监控平台beta </title>
+    <link href="../../../css2/index.css" rel="stylesheet">
+    <script language="javascript" type="text/javascript" src="/assets/js/jquery.js"></script>
+    <script language="javascript" type="text/javascript" src="/my97/WdatePicker.js"></script>
+    <script language="javascript" type="text/javascript" src="/js/esl.js"></script>
+
+
+</head>
+<body>
+<div class="total">
+    <div class="viewport">
+        <div class="nav-global">
+            <div class="global-logo"><a class="logo" href="/"></a></div>
+            <div class="items-inner">
+                <ul class="global-items">
+                    <li class="nav-item">
+                        <a href="#" class="nav-item-inner">
+                            <span class="font-icon  message-icon">&#xe601;</span>
+                            <span class="nav-text">消息中心</span>
+                        </a>
+
+                        <!-- 展开信息 -->
+                        <!--
+                        <div class="dropdown-menu">
+                            <div class="dropdown-menu-inner">
+                                <ul>
+                                    <li class="dropdown-menu-item">
+                                        <a target="_blank" href="https://docs.qingcloud.com/guide/index.html">
+                                            <span class="font-icon fa-guide"></span>用户指南
+                                        </a>
+                                    </li>
+                                    <li class="dropdown-menu-item">
+                                        <a target="_blank" href="https://docs.qingcloud.com/guide/index.html">
+                                            <span class="font-icon fa-guide"></span>备案
+                                        </a>
+                                    </li>
+                                    <li class="dropdown-menu-item">
+                                        <a target="_blank" href="https://docs.qingcloud.com/guide/index.html">
+                                            <span class="font-icon fa-guide"></span>常见问题
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        -->
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#" class="nav-item-inner">
+                            <span class="font-icon lock-icon">&#xe60a;</span>
+                            <span class="nav-text">用户</span>
+                        </a>
+                        <!-- 展开信息 -->
+                        <div class="dropdown-menu">
+                            <div class="dropdown-menu-inner">
+                                <ul>
+                                    <li class="dropdown-menu-item">
+                                        <a target="_blank" href="/loginout">
+                                            <span class="font-icon fa-guide"></span>退出
+                                        </a>
+                                    </li>
+                                    <!--
+                                    <li class="dropdown-menu-item">
+                                        <a target="_blank" href="https://docs.qingcloud.com/guide/index.html">
+                                            <span class="font-icon fa-guide"></span>备案
+                                        </a>
+                                    </li>
+                                    <li class="dropdown-menu-item">
+                                        <a target="_blank" href="https://docs.qingcloud.com/guide/index.html">
+                                            <span class="font-icon fa-guide"></span>常见问题
+                                        </a>
+                                    </li>
+                                    -->
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+
+
+                </ul>
+            </div>
+        </div>

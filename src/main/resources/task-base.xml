@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+       http://www.springframework.org/schema/tx
+       http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+
+
+    <!--<bean id="alertTask" class="com.autohome.log.service.task.AlertTask"/>
+    <bean id="alertTaskQuartz" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="alertTask"/>
+        <property name="targetMethod" value="dowork"/>
+        <property name="concurrent" value="false"/>
+    </bean>
+    <bean id="alertTaskTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="jobDetail" ref="alertTaskQuartz"/>
+        &lt;!&ndash;<property name="cronExpression" value="0 0/5 * * * ?"/>&ndash;&gt;
+        <property name="cronExpression" value="0 0/1 * * * ?"/>
+    </bean>
+    <bean id="alertTaskScheduler" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+        <property name="triggers">
+            <list>
+                <ref bean="alertTaskTrigger"/>
+            </list>
+        </property>
+        <property name="autoStartup">
+            <value>true</value>
+        </property>
+        <property name="quartzProperties">
+            <props>
+                <prop key="org.quartz.threadPool.threadCount">1</prop>
+            </props>
+        </property>
+    </bean>
+
+
+    <bean id="scsTask" class="com.autohome.log.service.task.SCSTask"/>
+    <bean id="scsTaskQuartz" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="scsTask"/>
+        <property name="targetMethod" value="clearStream"/>
+        <property name="concurrent" value="false"/>
+    </bean>
+    <bean id="scsTaskTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="jobDetail" ref="scsTaskQuartz"/>
+        <property name="cronExpression" value="0 0/5 * * * ?"/>
+    </bean>
+    <bean id="scsTaskScheduler" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+        <property name="triggers">
+            <list>
+                <ref bean="scsTaskTrigger"/>
+            </list>
+        </property>
+        <property name="autoStartup">
+            <value>true</value>
+        </property>
+        <property name="quartzProperties">
+            <props>
+                <prop key="org.quartz.threadPool.threadCount">1</prop>
+            </props>
+        </property>
+    </bean>
+
+
+    <bean id="rtTask" class="com.autohome.log.service.task.RTTask"/>
+    <bean id="rtTaskQuartz" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="rtTask"/>
+        <property name="targetMethod" value="clearStream"/>
+        <property name="concurrent" value="false"/>
+    </bean>
+    <bean id="rtTaskTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="jobDetail" ref="rtTaskQuartz"/>
+        <property name="cronExpression" value="0 0/5 * * * ?"/>
+    </bean>
+    <bean id="rtTaskScheduler" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+        <property name="triggers">
+            <list>
+                <ref bean="rtTaskTrigger"/>
+            </list>
+        </property>
+        <property name="autoStartup">
+            <value>true</value>
+        </property>
+        <property name="quartzProperties">
+            <props>
+                <prop key="org.quartz.threadPool.threadCount">1</prop>
+            </props>
+        </property>
+    </bean>
+
+    <bean id="iisTask" class="com.autohome.log.service.task.IISTask"/>
+    <bean id="iisTaskQuartz" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="iisTask"/>
+        <property name="targetMethod" value="clearStream"/>
+        <property name="concurrent" value="false"/>
+    </bean>
+    <bean id="iisTaskTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="jobDetail" ref="iisTaskQuartz"/>
+        <property name="cronExpression" value="0 0/5 * * * ?"/>
+    </bean>
+    <bean id="iisTaskScheduler" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+        <property name="triggers">
+            <list>
+                <ref bean="iisTaskTrigger"/>
+            </list>
+        </property>
+        <property name="autoStartup">
+            <value>true</value>
+        </property>
+        <property name="quartzProperties">
+            <props>
+                <prop key="org.quartz.threadPool.threadCount">1</prop>
+            </props>
+        </property>
+    </bean>
+
+
+
+    <bean id="iisTaskQuartz2" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="iisTask"/>
+        <property name="targetMethod" value="clearStream2"/>
+        <property name="concurrent" value="false"/>
+    </bean>
+    <bean id="iisTaskTrigger2" class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="jobDetail" ref="iisTaskQuartz2"/>
+        <property name="cronExpression" value="0 0/5 * * * ?"/>
+    </bean>
+    <bean id="iisTaskScheduler2" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+        <property name="triggers">
+            <list>
+                <ref bean="iisTaskTrigger2"/>
+            </list>
+        </property>
+        <property name="autoStartup">
+            <value>true</value>
+        </property>
+        <property name="quartzProperties">
+            <props>
+                <prop key="org.quartz.threadPool.threadCount">1</prop>
+            </props>
+        </property>
+    </bean>
+
+
+
+    <bean id="traceAlertTask" class="com.autohome.log.service.task.TraceAlertTask"/>
+    <bean id="traceAlertTaskQuartz" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="traceAlertTask"/>
+        <property name="targetMethod" value="alert"/>
+        <property name="concurrent" value="false"/>
+    </bean>
+    <bean id="traceAlertTaskTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="jobDetail" ref="traceAlertTaskQuartz"/>
+        <property name="cronExpression" value="0,30 * * * * ?"/>
+    </bean>
+    <bean id="traceAlertTaskScheduler" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+        <property name="triggers">
+            <list>
+                <ref bean="traceAlertTaskTrigger"/>
+            </list>
+        </property>
+        <property name="autoStartup">
+            <value>true</value>
+        </property>
+        <property name="quartzProperties">
+            <props>
+                <prop key="org.quartz.threadPool.threadCount">1</prop>
+            </props>
+        </property>
+    </bean>
+
+
+    <bean id="sqoopTraceExTask" class="com.autohome.log.service.task.SqoopTraceExTask"/>
+    <bean id="sqoopTraceExTaskQuartz" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="sqoopTraceExTask"/>
+        <property name="targetMethod" value="dayTask"/>
+        <property name="concurrent" value="false"/>
+    </bean>
+    <bean id="sqoopTraceExTaskTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="jobDetail" ref="sqoopTraceExTaskQuartz"/>
+        <property name="cronExpression" value="0 0 2 * * ?"/>
+    </bean>
+    <bean id="sqoopTraceExTaskScheduler" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+        <property name="triggers">
+            <list>
+                <ref bean="sqoopTraceExTaskTrigger"/>
+            </list>
+        </property>
+        <property name="autoStartup">
+            <value>false</value>
+        </property>
+        <property name="quartzProperties">
+            <props>
+                <prop key="org.quartz.threadPool.threadCount">1</prop>
+            </props>
+        </property>
+    </bean>
+
+
+
+
+
+    <bean id="mallMQTask" class="com.autohome.log.service.task.MallMQTask"/>
+    <bean id="mallMQTaskQuartz" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="mallMQTask"/>
+        <property name="targetMethod" value="alert"/>
+        <property name="concurrent" value="false"/>
+    </bean>
+    <bean id="mallMQTaskTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="jobDetail" ref="mallMQTaskQuartz"/>
+        <property name="cronExpression" value="0,30 * * * * ?"/>
+    </bean>
+    <bean id="mallMQTaskScheduler" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+        <property name="triggers">
+            <list>
+                <ref bean="mallMQTaskTrigger"/>
+            </list>
+        </property>
+        <property name="autoStartup">
+            <value>true</value>
+        </property>
+        <property name="quartzProperties">
+            <props>
+                <prop key="org.quartz.threadPool.threadCount">1</prop>
+            </props>
+        </property>
+    </bean>
+
+    <bean id="schedulerMap" class="java.util.LinkedHashMap">
+        <constructor-arg>
+            <map key-type="java.lang.String" value-type="org.quartz.Scheduler">
+                <entry key="alertTaskScheduler" value-ref="alertTaskScheduler" />
+                <entry key="traceAlertTaskScheduler" value-ref="traceAlertTaskScheduler" />
+                <entry key="scsTaskScheduler" value-ref="scsTaskScheduler" />
+                <entry key="iisTaskScheduler" value-ref="iisTaskScheduler" />
+                <entry key="iisTaskScheduler2" value-ref="iisTaskScheduler2" />
+                <entry key="rtTaskScheduler" value-ref="rtTaskScheduler" />
+                <entry key="mallMQTaskScheduler" value-ref="mallMQTaskScheduler" />
+                <entry key="urlMonitorTaskScheduler" value-ref="urlMonitorTaskScheduler" />
+                <entry key="esMonitorTaskScheduler" value-ref="esMonitorTaskScheduler" />
+                <entry key="carAttentionTaskScheduler" value-ref="carAttentionTaskScheduler" />
+                &lt;!&ndash;<entry key="sqoopTraceExTaskScheduler" value-ref="sqoopTraceExTaskScheduler" />&ndash;&gt;
+            </map>
+        </constructor-arg>
+    </bean>
+
+
+
+    <bean id="urlMonitorTask" class="com.autohome.log.service.task.UrlMonitorTask"/>
+    <bean id="urlMonitorTaskQuartz" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="urlMonitorTask"/>
+        <property name="targetMethod" value="dowork"/>
+        <property name="concurrent" value="false"/>
+    </bean>
+    <bean id="urlMonitorTaskTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="jobDetail" ref="urlMonitorTaskQuartz"/>
+        &lt;!&ndash;<property name="cronExpression" value="0 0/5 * * * ?"/>&ndash;&gt;
+        <property name="cronExpression" value="0 0/1 * * * ?"/>
+    </bean>
+    <bean id="urlMonitorTaskScheduler" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+        <property name="triggers">
+            <list>
+                <ref bean="urlMonitorTaskTrigger"/>
+            </list>
+        </property>
+        <property name="autoStartup">
+            <value>true</value>
+        </property>
+        <property name="quartzProperties">
+            <props>
+                <prop key="org.quartz.threadPool.threadCount">1</prop>
+            </props>
+        </property>
+    </bean>
+
+    <bean id="esMonitorTask" class="com.autohome.log.service.monitor.es.EsMTask"/>
+    <bean id="esMonitorTaskQuartz" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="esMonitorTask"/>
+        <property name="targetMethod" value="dowork"/>
+        <property name="concurrent" value="false"/>
+    </bean>
+    <bean id="esMonitorTaskTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="jobDetail" ref="esMonitorTaskQuartz"/>
+        <property name="cronExpression" value="0 23 * * * ?"/>
+    </bean>
+    <bean id="esMonitorTaskScheduler" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+        <property name="triggers">
+            <list>
+                <ref bean="esMonitorTaskTrigger"/>
+            </list>
+        </property>
+        <property name="autoStartup">
+            <value>false</value>
+        </property>
+        <property name="quartzProperties">
+            <props>
+                <prop key="org.quartz.threadPool.threadCount">1</prop>
+            </props>
+        </property>
+    </bean>
+
+    <bean id = "carAttentionTask" class="com.autohome.log.service.task.CarAttentionTask">
+        <property name="redisClient" ref="redisClient"/>
+    </bean>
+
+    <bean id="carAttentionTaskQuartz" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="carAttentionTask"/>
+        <property name="targetMethod" value="task"/>
+        <property name="concurrent" value="false"/>
+    </bean>
+    <bean id="carAttentionTaskTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="jobDetail" ref="carAttentionTaskQuartz"/>
+        <property name="cronExpression" value="0 30 1,10 * * ?"/>
+    </bean>
+    <bean id="carAttentionTaskScheduler" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+        <property name="triggers">
+            <list>
+                <ref bean="carAttentionTaskTrigger"/>
+            </list>
+        </property>
+        <property name="autoStartup">
+            <value>true</value>
+        </property>
+        <property name="quartzProperties">
+            <props>
+                <prop key="org.quartz.threadPool.threadCount">1</prop>
+            </props>
+        </property>
+    </bean>-->
+</beans>

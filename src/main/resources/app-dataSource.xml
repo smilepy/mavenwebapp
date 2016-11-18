@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+  xmlns:tx="http://www.springframework.org/schema/tx"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
+        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+
+    <!--<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        &lt;!&ndash; 基本属性 url、user、password &ndash;&gt;
+        <property name="url" value="${com.nsx.sendx.jdbc.url}?useUnicode=true&amp;characterEncoding=${com.nsx.sendx.jdbc.encoding}"/>
+        <property name="username" value="${com.nsx.sendx.jdbc.user}"/>
+        <property name="password" value="${com.nsx.sendx.jdbc.password}"/>
+        &lt;!&ndash; 配置初始化大小、最小、最大 &ndash;&gt;
+        <property name="initialSize" value="${com.nsx.sendx.jdbc.initPoolSize}" />
+        <property name="minIdle" value="3" />
+        <property name="maxActive" value="${com.nsx.sendx.jdbc.maxPoolSize}" />
+        &lt;!&ndash; 配置获取连接等待超时的时间 &ndash;&gt;
+        <property name="maxWait" value="60000" />
+        &lt;!&ndash; 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 &ndash;&gt;
+        <property name="timeBetweenEvictionRunsMillis" value="60000" />
+        &lt;!&ndash; 配置一个连接在池中最小生存的时间，单位是毫秒 &ndash;&gt;
+        <property name="minEvictableIdleTimeMillis" value="300000" />
+        <property name="validationQuery" value="SELECT 'x'" />
+        <property name="testWhileIdle" value="true" />
+        <property name="testOnBorrow" value="false" />
+        <property name="testOnReturn" value="false" />
+        &lt;!&ndash; 打开PSCache，并且指定每个连接上PSCache的大小 &ndash;&gt;
+        <property name="poolPreparedStatements" value="true" />
+        <property name="maxPoolPreparedStatementPerConnectionSize" value="20" />
+        &lt;!&ndash; 配置监控统计拦截的filters &ndash;&gt;
+        &lt;!&ndash;<property name="filters" value="stat" />&ndash;&gt;
+    </bean>
+
+
+    <bean id="traceDataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        &lt;!&ndash; 基本属性 url、user、password &ndash;&gt;
+        <property name="url" value="${com.nsx.sendx.tjdbc.url}?useUnicode=true&amp;characterEncoding=${com.nsx.sendx.tjdbc.encoding}"/>
+        <property name="username" value="${com.nsx.sendx.tjdbc.user}"/>
+        <property name="password" value="${com.nsx.sendx.tjdbc.password}"/>
+        &lt;!&ndash; 配置初始化大小、最小、最大 &ndash;&gt;
+        <property name="initialSize" value="${com.nsx.sendx.tjdbc.initPoolSize}" />
+        <property name="minIdle" value="3" />
+        <property name="maxActive" value="${com.nsx.sendx.tjdbc.maxPoolSize}" />
+        &lt;!&ndash; 配置获取连接等待超时的时间 &ndash;&gt;
+        <property name="maxWait" value="60000" />
+        &lt;!&ndash; 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 &ndash;&gt;
+        <property name="timeBetweenEvictionRunsMillis" value="60000" />
+        &lt;!&ndash; 配置一个连接在池中最小生存的时间，单位是毫秒 &ndash;&gt;
+        <property name="minEvictableIdleTimeMillis" value="300000" />
+        <property name="validationQuery" value="SELECT 'x'" />
+        <property name="testWhileIdle" value="true" />
+        <property name="testOnBorrow" value="false" />
+        <property name="testOnReturn" value="false" />
+        &lt;!&ndash; 打开PSCache，并且指定每个连接上PSCache的大小 &ndash;&gt;
+        <property name="poolPreparedStatements" value="true" />
+        <property name="maxPoolPreparedStatementPerConnectionSize" value="20" />
+        &lt;!&ndash; 配置监控统计拦截的filters &ndash;&gt;
+        &lt;!&ndash;<property name="filters" value="stat" />&ndash;&gt;
+    </bean>
+
+    <bean id="storeDataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        &lt;!&ndash; 基本属性 url、user、password &ndash;&gt;
+        <property name="url" value="${com.nsx.sendx.sjdbc.url}?useUnicode=true&amp;characterEncoding=${com.nsx.sendx.sjdbc.encoding}"/>
+        <property name="username" value="${com.nsx.sendx.sjdbc.user}"/>
+        <property name="password" value="${com.nsx.sendx.sjdbc.password}"/>
+        &lt;!&ndash; 配置初始化大小、最小、最大 &ndash;&gt;
+        <property name="initialSize" value="${com.nsx.sendx.sjdbc.initPoolSize}" />
+        <property name="minIdle" value="3" />
+        <property name="maxActive" value="${com.nsx.sendx.sjdbc.maxPoolSize}" />
+        &lt;!&ndash; 配置获取连接等待超时的时间 &ndash;&gt;
+        <property name="maxWait" value="60000" />
+        &lt;!&ndash; 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 &ndash;&gt;
+        <property name="timeBetweenEvictionRunsMillis" value="60000" />
+        &lt;!&ndash; 配置一个连接在池中最小生存的时间，单位是毫秒 &ndash;&gt;
+        <property name="minEvictableIdleTimeMillis" value="300000" />
+        <property name="validationQuery" value="SELECT 'x'" />
+        <property name="testWhileIdle" value="true" />
+        <property name="testOnBorrow" value="false" />
+        <property name="testOnReturn" value="false" />
+        &lt;!&ndash; 打开PSCache，并且指定每个连接上PSCache的大小 &ndash;&gt;
+        <property name="poolPreparedStatements" value="true" />
+        <property name="maxPoolPreparedStatementPerConnectionSize" value="20" />
+        &lt;!&ndash; 配置监控统计拦截的filters &ndash;&gt;
+        &lt;!&ndash;<property name="filters" value="stat" />&ndash;&gt;
+    </bean>-->
+</beans>

@@ -1,0 +1,100 @@
+<!-- 左侧 -->
+<div class="nav-zone">
+    <div class="nav-zone-inner">
+        <div class="zone-switcher  ">
+            <a class="current-zone">
+                <span class="font-icon icon-zone"></span>
+                <span class="zone-text">统一监控平台</span>
+
+            </a>
+
+        </div>
+
+        <div class="zone-items">
+            <dl class="nav-list">
+                <dt #if($!menu1=="index")class="dd-select"#end>
+                    <a href="/" class="hover-con">
+                        <span class="font-icon data-platform">&#xe607;</span>
+                        <span class="big-text">首页</span>
+                    </a>
+                </dt>
+            </dl>
+            <dl class="nav-list">
+                <dt #if($!menu1=="trace")class="nav-list-active"#end>
+                    <a href="javascript:void(0);" class="hover-con">
+                        <span class="font-icon data-platform">&#xe600;</span>
+                        <span class="big-text">trace</span>
+                        <!-- 展开收起箭头 show-select -->
+                        <em class="font-icon show">&#xe605;</em>
+                    </a>
+                </dt>
+                <dd #if($!menu2=="app"|| $!menu2=="list"|| $!menu2=="show"|| $!menu2=="node" || $!menu2=="key")class="dd-select"#end #if($!menu1=="trace")style="display: block;"#end >
+                    <a href="/trace/app" class="hover-con">
+                        <span class="font-icon round-icon">&#xe602;</span>
+                        <span class="dd-text">trace</span>
+                    </a>
+                </dd>
+                <dd #if($!menu2=="ex" && $!type==1)class="dd-select"#end  #if($!menu1=="trace")style="display: block;"#end >
+                    <a href="/trace/ex?type=1" class="hover-con" #if($!menu1=="trace")style="display: block;"#end >
+                        <span class="font-icon round-icon">&#xe602;</span>
+                        <span class="dd-text">异常</span>
+                    </a>
+                </dd>
+                <dd #if($!menu2=="ex" && $!type==2)class="dd-select"#end #if($!menu1=="trace")style="display: block;"#end >
+                    <a href="/trace/ex?type=2" class="hover-con" #if($!menu1=="trace")style="display: block;"#end >
+                        <span class="font-icon round-icon">&#xe602;</span>
+                        <span class="dd-text">超时</span>
+                    </a>
+                </dd>
+            </dl>
+            <dl class="nav-list">
+                <dt #if($!menu1=="log" && $!menu2=="rt")class="dd-select"#end>
+                    <a href="/log/rt" class="hover-con">
+                        <span class="font-icon data-platform">&#xe609;</span>
+                        <span class="big-text">性能监控</span>
+                    </a>
+                </dt>
+            </dl>
+            <dl class="nav-list">
+                <dt #if($!menu1=="log" && $!menu2=="scs")class="dd-select"#end>
+                    <a href="/log/scs" class="hover-con">
+                        <span class="font-icon data-platform">&#xe601;</span>
+                        <span class="big-text">SCS监控</span>
+                    </a>
+                </dt>
+            </dl>
+            <dl class="nav-list">
+                <dt #if($!menu1=="log" && $!menu2=="iis")class="dd-select"#end>
+                    <a href="/log/iis" class="hover-con">
+                        <span class="font-icon data-platform">&#xe610;</span>
+                        <span class="big-text">IIS监控</span>
+                    </a>
+                </dt>
+            </dl>
+            <dl class="nav-list">
+                <dt #if($!menu1=="monitor" && ($!menu2=="domain"||$!menu2=="add"||$!menu2=="modify"||$!menu2=="url"))class="dd-select"#end>
+                    <a href="/monitor/domain?p=1" class="hover-con">
+                        <span class="font-icon data-platform">&#xe608;</span>
+                        <span class="big-text">存活监控</span>
+                    </a>
+                </dt>
+            </dl>
+            <dl class="nav-list">
+                <dt #if($!menu1=="upload")class="nav-list-active"#end>
+                    <a href="javascript:void(0);" class="hover-con">
+                        <span class="font-icon data-platform">&#xe600;</span>
+                        <span class="big-text">机器学习</span>
+                        <!-- 展开收起箭头 show-select -->
+                        <em class="font-icon show">&#xe605;</em>
+                    </a>
+                </dt>
+                <dd #if($!menu2=="uploadExcel")class="dd-select"#end #if($!menu1=="upload")style="display: block;"#end >
+                    <a href="/upload/uploadExcel" class="hover-con" target="_blank">
+                        <span class="font-icon round-icon">&#xe602;</span>
+                        <span class="dd-text">论坛水军预测</span>
+                    </a>
+                </dd>
+            </dl>
+        </div>
+    </div>
+</div>

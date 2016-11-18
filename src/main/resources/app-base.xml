@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+       http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+       http://www.springframework.org/schema/aop 
+       http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+       http://www.springframework.org/schema/tx 
+       http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+       http://www.springframework.org/schema/context 
+       http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+    <context:annotation-config/>
+    <context:component-scan base-package="com.autohome"/>
+    <aop:aspectj-autoproxy/>
+
+    <!--<tx:annotation-driven transaction-manager="transactionManager"/>-->
+
+    <!--<bean id="sqlMapClient" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean" autowire="byName">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="configLocation" value="classpath:sqlmap-config.xml"/>
+    </bean>
+
+    <bean id="traceSqlMapClient" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean" autowire="byName">
+        <property name="dataSource" ref="traceDataSource"/>
+        <property name="configLocation" value="classpath:sqlmap-config.xml"/>
+    </bean>
+
+    <bean id="storeSqlMapClient" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean" autowire="byName">
+        <property name="dataSource" ref="storeDataSource"/>
+        <property name="configLocation" value="classpath:sqlmap-config.xml"/>
+    </bean>
+
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource"  ref="dataSource"/>
+    </bean>
+
+    <bean name="velocityTools" class="java.util.HashMap">
+        <constructor-arg>
+            <map>
+                <entry key="stringUtils">
+                    <bean class="org.apache.commons.lang.StringUtils"/>
+                </entry>
+                <entry key="stringEscapeUtils">
+                    <bean class="org.apache.commons.lang.StringEscapeUtils"/>
+                </entry>
+                <entry key="dfUtils">
+                    <bean class="com.autohome.log.service.util.DateTools"/>
+                </entry>
+                <entry key="dateUtils">
+                    <bean class="org.apache.commons.lang.time.DateUtils"/>
+                </entry>
+                <entry key="commonUtil">
+                    <bean class="com.autohome.log.web.util.CommonUtil"/>
+                </entry>
+                <entry key="pageUtil">
+                    <bean class="com.autohome.log.web.util.PageUtil"/>
+                </entry>
+            </map>
+        </constructor-arg>
+    </bean>
+    <bean id="esClient" class="com.autohome.log.service.es.EsClient">
+        <property name="escname" value="${com.autohome.log.es.cname}"/>
+        <property name="esip" value="${com.autohome.log.es.ip}"/>
+    </bean>
+
+    <bean id="cfg" class="com.autohome.log.service.common.Cfg">
+        <property name="QN_NS_NAME" value="${com.nsx.sendx.img.qiniu.ns}" />
+        <property name="QN_NS_HTTP_PRE" value="${com.nsx.sendx.img.http.pre}" />
+    </bean>
+
+    <bean id="velocityUrl" class="java.util.HashMap">
+        <constructor-arg>
+            <map>
+                <entry key="home" value="http://${com.nsx.sendx.url.home}"/>
+                <entry key="imgHome" value="${com.nsx.sendx.img.http.pre}"/>
+            </map>
+        </constructor-arg>
+    </bean>
+    <bean id = "commonUtil" class="com.autohome.log.web.util.CommonUtil"/>
+
+    <bean id = "handleExcelTask" class="com.autohome.log.service.task.HandleExcelTask">
+        <property name="hdfsUrl" value="${com.autohome.log.hdfsUrl}"/>
+        <property name="writePath" value="${com.autohome.log.uploadpath}"/>
+        <property name="shell" value="${com.autohome.log.shell}"/>
+    </bean>
+
+    <bean id="jedisPoolConfig" class="redis.clients.jedis.JedisPoolConfig">
+        <property name="maxTotal" value="8"/>
+        <property name="maxIdle" value="2"/>
+        <property name="minIdle" value="0"/>
+    </bean>
+
+    <bean id ="redisClient" class="com.autohome.log.service.redis.RedisClient" init-method="init">
+        <property name="host" value="${com.autohome.codis.host}"/>
+        <property name="port" value="${com.autohome.codis.port}"/>
+        <property name="poolConfig" ref="jedisPoolConfig"/>
+        <property name="timeout" value="1000"/>
+    </bean>-->
+    <bean id="cfg" class="com.autohome.practice.web.util.TestClass">
+        <property name="Environment" value="${test.environment}" />
+
+    </bean>
+</beans>

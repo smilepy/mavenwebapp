@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//Spring//DTD Bean//EN"
+    "http://www.springframework.org/dtd/spring-beans.dtd">
+<!-- Application Context -->
+<beans>
+  <import resource="app-dataSource.xml"/>
+  <import resource="app-base.xml"/>
+  <import resource="task-base.xml"/>
+</beans>

@@ -1,0 +1,49 @@
+#parse("/WEB-INF/vm/vm2/head.vm")
+
+
+#parse("/WEB-INF/vm/vm2/left.vm")
+
+        <!-- 内容 -->
+        <div class="content" style="">
+            <div style="margin-left: 20px">
+                <h4>重要提醒</h4>
+
+                <p>
+                    <font color="red">系统升级：对于已经接入<性能监控>的系统，需要更新各位的客户端，老服务因为鹿泉机房无法支持UDP负载均衡准备下线，以免影响正常使用。</font> 方法如下:</br></br>
+                    java版本：<a href="http://wiki.corpautohome.com/pages/viewpage.action?pageId=40010964 ">http://wiki.corpautohome.com/pages/viewpage.action?pageId=40010964 </a> </br>
+                    .net版本：<a href="http://wiki.corpautohome.com/pages/viewpage.action?pageId=50563804">http://wiki.corpautohome.com/pages/viewpage.action?pageId=50563804</a>  和  <a href="http://wiki.corpautohome.com/pages/viewpage.action?pageId=50563679 ">http://wiki.corpautohome.com/pages/viewpage.action?pageId=50563679 </a> 如果接入Turbo使用第二个  如未接入 两个都可</br>
+                </p>
+                <br/>
+                <br/>
+                <br/>
+                <h4>功能简介及其接入说明</h4>
+                <p>
+                <h5>一. 性能监控：</h5>
+                功能：监控某个方法性能包括TP99 调用次数等<br/>
+                TP99(TP90,TP50)：99%(90%,50%)的访问者的访问耗时在此数值以下。<br/>
+                接入方式：<br/>
+                java版本：<a href="http://wiki.corpautohome.com/pages/viewpage.action?pageId=40010964 ">http://wiki.corpautohome.com/pages/viewpage.action?pageId=40010964 </a> </br>
+                .net版本：<a href="http://wiki.corpautohome.com/pages/viewpage.action?pageId=50563804">http://wiki.corpautohome.com/pages/viewpage.action?pageId=50563804</a>  和  <a href="http://wiki.corpautohome.com/pages/viewpage.action?pageId=50563679 ">http://wiki.corpautohome.com/pages/viewpage.action?pageId=50563679 </a> 如果接入Turbo使用第二个  如未接入 两个都可</br>
+                <h5>二. Trace监控：</h5>
+                功能：监控某个调用链的每个方法,直观展示整个调用树，找出系统瓶颈<br/>
+                接入方式：<br/>
+                turbo接入：<a href="http://wiki.corpautohome.com/pages/viewpage.action?pageId=47384219">http://wiki.corpautohome.com/pages/viewpage.action?pageId=47384219</a></br>
+                单独接入：<a href="http://wiki.corpautohome.com/pages/viewpage.action?pageId=47384311">http://wiki.corpautohome.com/pages/viewpage.action?pageId=47384311</a>
+                </p>
+                <br/>
+                <br/>
+                <br/>
+                <h5>如需帮助</h5>
+                <p>
+                    联系人：应用平台 朱峰
+                </p>
+                <br/>
+                <h5>五毛特效</h5>
+                <p>
+                    当前环境：$!environment
+                </p>
+            </div>
+        </div>
+        </div>
+
+#parse("/WEB-INF/vm/vm2/foot.vm")

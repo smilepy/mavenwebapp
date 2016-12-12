@@ -1,0 +1,305 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+    <appender name="CONSOLE" class="org.apache.log4j.ConsoleAppender">
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="Encoding" value="UTF-8"/>
+            <param name="ConversionPattern" value="[%7r] %6p - %30.30c - %m \n"/>
+        </layout>
+    </appender>
+	
+	
+	<appender name="FILE-DEBUG" class="org.apache.log4j.FileAppender">
+        <param name="Append" value="true"/>
+        <param name="file" value="/var/wet/log/bb-debug.log"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d [%7r] %6p - %30.30c - %m \n"/>
+        </layout>
+    </appender>
+
+
+
+    <appender name="SCS-TASK-LOG" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="DatePattern" value="'.'yyyy-MM-dd"/>
+        <param name="Append" value="true"/>
+        <param name="file" value="/var/wet/log/scs-task.log"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d [%7r] %6p - %m \n"/>
+        </layout>
+    </appender>
+
+    <category name="scs-task" additivity="false">
+        <priority value="${com.autohome.log.level}"/>
+        <appender-ref ref="SCS-TASK-LOG"/>
+    </category>
+
+    <appender name="UPLOAD-FILE-LOG" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="DatePattern" value="'.'yyyy-MM-dd"/>
+        <param name="Append" value="true"/>
+        <param name="file" value="/var/wet/log/upload-file.log"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d [%7r] %6p - %m \n"/>
+        </layout>
+    </appender>
+
+    <category name="upload-file" additivity="false">
+        <priority value="${com.autohome.log.level}"/>
+        <appender-ref ref="UPLOAD-FILE-LOG"/>
+    </category>
+
+    <appender name="CarAttentionTask-LOG" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="DatePattern" value="'.'yyyy-MM-dd"/>
+        <param name="Append" value="true"/>
+        <param name="file" value="/var/wet/log/CarAttentionTask-LOG.log"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d [%7r] %6p - %m \n"/>
+        </layout>
+    </appender>
+
+    <category name="CarAttentionTask-file" additivity="false">
+        <priority value="${com.autohome.log.level}"/>
+        <appender-ref ref="CarAttentionTask-LOG"/>
+    </category>
+
+
+
+    <appender name="RT-TASK-LOG" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="DatePattern" value="'.'yyyy-MM-dd"/>
+        <param name="Append" value="true"/>
+        <param name="file" value="/var/wet/log/rt-task.log"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d [%7r] %6p - %m \n"/>
+        </layout>
+    </appender>
+
+    <category name="rt-task" additivity="false">
+        <priority value="${com.autohome.log.level}"/>
+        <appender-ref ref="RT-TASK-LOG"/>
+    </category>
+
+
+    <appender name="ES-LOG" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="DatePattern" value="'.'yyyy-MM-dd"/>
+        <param name="Append" value="true"/>
+        <param name="file" value="/var/wet/log/es-log.log"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d [%7r] %6p - %m \n"/>
+        </layout>
+    </appender>
+
+    <category name="es-log" additivity="false">
+        <priority value="${com.autohome.log.level}"/>
+        <appender-ref ref="ES-LOG"/>
+    </category>
+
+
+
+    <appender name="IIS-TASK-LOG" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="DatePattern" value="'.'yyyy-MM-dd"/>
+        <param name="Append" value="true"/>
+        <param name="file" value="/var/wet/log/iis-task.log"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d [%7r] %6p - %m \n"/>
+        </layout>
+    </appender>
+
+    <category name="iis-task" additivity="false">
+        <priority value="${com.autohome.log.level}"/>
+        <appender-ref ref="IIS-TASK-LOG"/>
+    </category>
+
+
+    <appender name="ALERT-TASK-LOG" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="DatePattern" value="'.'yyyy-MM-dd"/>
+        <param name="Append" value="true"/>
+        <param name="file" value="/var/wet/log/alert-task.log"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d [%7r] %6p - %m \n"/>
+        </layout>
+    </appender>
+
+    <category name="alert-task" additivity="false">
+        <priority value="${com.autohome.log.level}"/>
+        <appender-ref ref="ALERT-TASK-LOG"/>
+    </category>
+
+    <appender name="ESM-TASK-LOG" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="DatePattern" value="'.'yyyy-MM-dd"/>
+        <param name="Append" value="true"/>
+        <param name="file" value="/var/wet/log/esm-task.log"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d [%7r] %6p - %m \n"/>
+        </layout>
+    </appender>
+
+    <category name="esm-task" additivity="false">
+        <priority value="${com.autohome.log.level}"/>
+        <appender-ref ref="ESM-TASK-LOG"/>
+    </category>
+
+    <appender name="URLMONITOR-TASK-LOG" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="DatePattern" value="'.'yyyy-MM-dd"/>
+        <param name="Append" value="true"/>
+        <param name="file" value="/var/wet/log/urlmonitor-task.log"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d [%7r] %6p - %m \n"/>
+        </layout>
+    </appender>
+
+    <category name="urlmonitor-task" additivity="false">
+        <priority value="${com.autohome.log.level}"/>
+        <appender-ref ref="URLMONITOR-TASK-LOG"/>
+    </category>
+
+
+    <appender name="TRACE-ALERT-TASK-LOG" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="DatePattern" value="'.'yyyy-MM-dd"/>
+        <param name="Append" value="true"/>
+        <param name="file" value="/var/wet/log/trace-alert-task.log"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d [%7r] %6p - %m \n"/>
+        </layout>
+    </appender>
+
+    <category name="trace-alert-task" additivity="false">
+        <priority value="${com.autohome.log.level}"/>
+        <appender-ref ref="TRACE-ALERT-TASK-LOG"/>
+    </category>
+
+
+    <appender name="TEST-LOG" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="DatePattern" value="'.'yyyy-MM-dd"/>
+        <param name="Append" value="true"/>
+        <param name="file" value="/var/wet/log/test-log.log"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d [%7r] %6p - %m \n"/>
+        </layout>
+    </appender>
+
+    <category name="test-log" additivity="false">
+        <priority value="${com.autohome.log.level}"/>
+        <appender-ref ref="TEST-LOG"/>
+    </category>
+
+    <appender name="PRINT-LOG" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="DatePattern" value="'.'yyyy-MM-dd"/>
+        <param name="Append" value="true"/>
+        <param name="file" value="/var/wet/log/ptint-log.log"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d [%7r] %6p - %m \n"/>
+        </layout>
+    </appender>
+
+    <category name="print-log" additivity="false">
+        <priority value="${com.autohome.log.level}"/>
+        <appender-ref ref="PRINT-LOG"/>
+    </category>
+
+
+
+    <appender name="SQOOP-TRACEEX-LOG" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="DatePattern" value="'.'yyyy-MM-dd"/>
+        <param name="Append" value="true"/>
+        <param name="file" value="/var/wet/log/sqoop-trace-ex.log"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d [%7r] %6p - %m \n"/>
+        </layout>
+    </appender>
+
+    <category name="sqoop-trace-ex" additivity="false">
+        <priority value="${com.autohome.log.level}"/>
+        <appender-ref ref="SQOOP-TRACEEX-LOG"/>
+    </category>
+
+
+
+    <appender name="MALL-MQ-LOG" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="DatePattern" value="'.'yyyy-MM-dd"/>
+        <param name="Append" value="true"/>
+        <param name="file" value="/var/wet/log/mall-mq-log.log"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d [%7r] %6p - %m \n"/>
+        </layout>
+    </appender>
+
+    <category name="mall-mq-log" additivity="false">
+        <priority value="${com.autohome.log.level}"/>
+        <appender-ref ref="MALL-MQ-LOG"/>
+    </category>
+
+    <appender name="turbo-es-query" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="DatePattern" value="'.'yyyy-MM-dd"/>
+        <param name="Append" value="true"/>
+        <param name="file" value="/var/wet/log/turbo-es-query.log"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d [%7r] %6p - %m \n"/>
+        </layout>
+    </appender>
+
+    <category name="es-query" additivity="false">
+        <priority value="${com.autohome.log.level}"/>
+        <appender-ref ref="turbo-es-query"/>
+    </category>
+
+
+
+
+    <appender name="TEST-MQ-LOG" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="DatePattern" value="'.'yyyy-MM-dd"/>
+        <param name="Append" value="true"/>
+        <param name="file" value="/var/wet/log/test-mq-log.log"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d [%7r] %6p - %m \n"/>
+        </layout>
+    </appender>
+
+    <category name="test-mq-log" additivity="false">
+        <priority value="${com.autohome.log.level}"/>
+        <appender-ref ref="TEST-MQ-LOG"/>
+    </category>
+
+
+    <appender name="IBatis" class="org.apache.log4j.ConsoleAppender">
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%-4r [%t] %-5p %c %x - %m%n" />
+        </layout>
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">
+            <param name="LevelMin" value="INFO" />
+            <param name="LevelMax" value="INFO" />
+        </filter>
+    </appender>
+
+    <logger name="com.ibatis" additivity="true">
+        <level value="INFO" />
+    </logger>
+    <logger name="java.sql.Connection" additivity="true">
+        <level value="INFO" />
+    </logger>
+    <logger name="java.sql.Statement" additivity="true">
+        <level value="INFO" />
+    </logger>
+    <logger name="java.sql.PreparedStatement" additivity="true">
+        <level value="INFO" />
+        <appender-ref ref="IBatis" />
+    </logger>
+    <logger name="java.sql.ResultSet" additivity="true">
+        <level value="INFO" />
+        <appender-ref ref="IBatis" />
+    </logger>
+    <!--显示sql start-->
+	<!--<logger name="java.sql.Connection">-->
+        <!--<level value="${com.autohome.log.log.level}" />-->
+    <!--</logger>-->
+
+    <!--<logger name="java.sql.PreparedStatement">-->
+        <!--<level value="${com.autohome.log.log.level}" />-->
+    <!--</logger>-->
+    <!--显示sql end-->
+
+	<root>
+        <priority value="INFO"/>
+        <appender-ref ref="CONSOLE"/>
+    </root>
+</log4j:configuration>

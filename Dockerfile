@@ -19,3 +19,4 @@ EXPOSE 8080
 
 CMD ["./var/tmp/tomcat/apache-tomcat-9.0.0.M11/bin/catalina.sh","run"]
 
+RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai  /etc/localtime
